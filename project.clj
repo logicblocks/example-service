@@ -25,7 +25,8 @@
                   :exclusions [org.slf4j/slf4j-api
                                org.slf4j/slf4j-log4j12]]]
 
-  :plugins [[lein-eftest "0.5.9"]]
+  :plugins [[lein-eftest "0.5.9"]
+            [lein-ancient "0.6.15"]]
 
   :profiles {:shared      {:dependencies
                            [[nrepl "0.6.0"]
