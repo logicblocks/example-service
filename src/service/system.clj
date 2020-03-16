@@ -1,6 +1,6 @@
 (ns service.system
   (:require
-    [com.stuartsierra.component :as component]))
+   [com.stuartsierra.component :as component]))
 
 (defn new-service []
   (component/system-map))

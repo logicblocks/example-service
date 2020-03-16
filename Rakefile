@@ -1,3 +1,11 @@
 require 'rake_leiningen'
 
-RakeLeiningen.define_installation_tasks(version: '2.9.1')
+task :default do
+  Rake::Task[:'app:check']
+end
+
+RakeLeiningen.define_installation_tasks(version: '2.9.3')
+
+namespace :app do
+  RakeLeiningen.define_check_tasks(fix: true)
+end

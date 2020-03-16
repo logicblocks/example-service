@@ -26,7 +26,12 @@
                                org.slf4j/slf4j-log4j12]]]
 
   :plugins [[lein-eftest "0.5.9"]
-            [lein-ancient "0.6.15"]]
+            [lein-ancient "0.6.15"]
+            [lein-kibit "0.1.6"]
+            [lein-cljfmt "0.6.1"]
+            [lein-bikeshed "0.5.1"]
+            [jonase/eastwood "0.3.3"]
+            [venantius/yagni "0.1.6"]]
 
   :profiles {:shared      {:dependencies
                            [[nrepl "0.6.0"]
