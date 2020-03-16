@@ -10,17 +10,17 @@
 
   :dependencies [[org.clojure/clojure "1.10.1"]
 
-                 [com.stuartsierra/component "0.4.0"]
+                 [com.stuartsierra/component "1.0.0"]
 
                  [cambium/cambium.core "0.9.3"]
                  [cambium/cambium.codec-cheshire "0.9.3"]
                  [cambium/cambium.logback.core "0.4.3"]
                  [cambium/cambium.logback.json "0.4.3"]
 
-                 [org.slf4j/slf4j-api "1.7.29"]
-                 [org.slf4j/jcl-over-slf4j "1.7.29"]
-                 [org.slf4j/jul-to-slf4j "1.7.29"]
-                 [org.slf4j/log4j-over-slf4j "1.7.29"]
+                 [org.slf4j/slf4j-api "1.7.30"]
+                 [org.slf4j/jcl-over-slf4j "1.7.30"]
+                 [org.slf4j/jul-to-slf4j "1.7.30"]
+                 [org.slf4j/log4j-over-slf4j "1.7.30"]
                  [ch.qos.logback/logback-classic "1.2.3"
                   :exclusions [org.slf4j/slf4j-api
                                org.slf4j/slf4j-log4j12]]]
@@ -30,7 +30,7 @@
 
   :profiles {:shared      {:dependencies
                            [[nrepl "0.6.0"]
-                            [org.clojure/tools.namespace "0.3.1"]
+                            [org.clojure/tools.namespace "1.0.0"]
                             [com.stuartsierra/component.repl "0.2.0"]
 
                             [eftest "0.5.9"]]
