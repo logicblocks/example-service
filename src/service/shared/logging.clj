@@ -1,7 +1,7 @@
 (ns service.shared.logging
   (:require
-   [cambium.codec :as codec]
-   [cambium.logback.json.flat-layout :as flat])
+    [cambium.codec :as codec]
+    [cambium.logback.json.flat-layout :as flat])
   (:import [org.slf4j.bridge SLF4JBridgeHandler]))
 
 (defn setup-logging []

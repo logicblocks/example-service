@@ -77,6 +77,8 @@
                "test/integration"
                "test/component"]
 
+  :cljfmt {:indents ^:replace {#".*" [[:inner 0]]}}
+
   :aliases {"test" ["do"
                     ["with-profile" "unit" "eftest" ":all"]
                     ["with-profile" "integration" "eftest" ":all"]

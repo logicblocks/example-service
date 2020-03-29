@@ -8,7 +8,7 @@
   Or run `(dev)` to just load code and switch to `dev` without
   starting the system."
   (:require
-   [com.stuartsierra.component.user-helpers :refer [dev go reset]]
-   [clojure.tools.namespace.repl :refer [set-refresh-dirs]]))
+    [com.stuartsierra.component.user-helpers :refer [dev go reset]]
+    [clojure.tools.namespace.repl :refer [set-refresh-dirs]]))
 
 (set-refresh-dirs "dev" "src")

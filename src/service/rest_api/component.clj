@@ -1,17 +1,17 @@
 (ns service.rest-api.component
   (:require
-   [com.stuartsierra.component :as component]
+    [com.stuartsierra.component :as component]
 
-   [org.httpkit.server :as server]
+    [org.httpkit.server :as server]
 
-   [service.rest-api.handlers :as handlers]))
+    [service.rest-api.handlers :as handlers]))
 
 (defn- format-address [host port]
   (format "http://%s:%s" host port))
 
 (defrecord RestApi
-  [configuration
-   server]
+           [configuration
+            server]
   component/Lifecycle
 
   (start [component]

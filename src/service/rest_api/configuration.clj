@@ -1,15 +1,15 @@
 (ns service.rest-api.configuration
   (:require
-   [configurati.core
-    :refer [define-configuration-specification
-            define-configuration
-            with-specification
-            with-parameter
-            with-source
-            with-key-fn
-            env-source]]
-   [configurati.key-fns
-    :refer [remove-prefix]]))
+    [configurati.core
+     :refer [define-configuration-specification
+             define-configuration
+             with-specification
+             with-parameter
+             with-source
+             with-key-fn
+             env-source]]
+    [configurati.key-fns
+     :refer [remove-prefix]]))
 
 (defn- seconds->millis [seconds]
   (* seconds 1000))

@@ -1,19 +1,19 @@
 (ns service.rest-api.handlers
   (:require
-   [bidi.ring :as bidi-ring]
+    [bidi.ring :as bidi-ring]
 
-   [ring.middleware.params :as params]
-   [ring.middleware.keyword-params :as keyword-params]
-   [ring.middleware.content-type :as content-type]
-   [ring.middleware.not-modified :as not-modified]
-   [ring.middleware.ssl :as ssl]
+    [ring.middleware.params :as params]
+    [ring.middleware.keyword-params :as keyword-params]
+    [ring.middleware.content-type :as content-type]
+    [ring.middleware.not-modified :as not-modified]
+    [ring.middleware.ssl :as ssl]
 
-   [liberator-hal.discovery-resource.core
-    :as discovery-resource]
-   [liberator-hal.ping-resource.core
-    :as ping-resource]
+    [liberator-hal.discovery-resource.core
+     :as discovery-resource]
+    [liberator-hal.ping-resource.core
+     :as ping-resource]
 
-   [service.rest-api.routing :as routing]))
+    [service.rest-api.routing :as routing]))
 
 (defn resources [dependencies]
   {:discovery (discovery-resource/handler dependencies

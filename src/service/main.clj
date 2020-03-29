@@ -1,7 +1,7 @@
 (ns service.main
   (:require
-   [service.system :as system]
-   [service.shared.logging :refer [setup-logging]])
+    [service.system :as system]
+    [service.shared.logging :refer [setup-logging]])
   (:gen-class))
 
 (defn -main [& _]
@@ -9,5 +9,5 @@
     (setup-logging)
     (let [system (system/start (system/create))]
       (.addShutdownHook
-       (Runtime/getRuntime)
-       (new Thread (fn* [] (system/stop system)))))))
+        (Runtime/getRuntime)
+        (new Thread (fn* [] (system/stop system)))))))
