@@ -7,7 +7,7 @@
 (defn -main [& _]
   (do
     (setup-logging)
-    (let [system (system/start (system/new-service))]
+    (let [system (system/start (system/create))]
       (.addShutdownHook
        (Runtime/getRuntime)
        (new Thread (fn* [] (system/stop system)))))))

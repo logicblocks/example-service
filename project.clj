@@ -10,7 +10,16 @@
 
   :dependencies [[org.clojure/clojure "1.10.1"]
 
+                 [bidi "2.1.6"]
+                 [http-kit "2.3.0"]
+                 [ring/ring-core "1.8.0"]
+                 [ring/ring-ssl "0.3.0"]
+
                  [com.stuartsierra/component "1.0.0"]
+
+                 [io.logicblocks/configurati "0.5.2"]
+                 [io.logicblocks/liberator-hal.ping-resource "0.1.2-RC4"]
+                 [io.logicblocks/liberator-hal.discovery-resource "0.1.0-RC6"]
 
                  [cambium/cambium.core "0.9.3"]
                  [cambium/cambium.codec-cheshire "0.9.3"]
@@ -37,6 +46,10 @@
                            [[nrepl "0.6.0"]
                             [org.clojure/tools.namespace "1.0.0"]
                             [com.stuartsierra/component.repl "0.2.0"]
+
+                            [org.bovinegenius/exploding-fish "0.3.6"]
+
+                            [freeport "1.0.0"]
 
                             [eftest "0.5.9"]]
                            :resource-paths
