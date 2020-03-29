@@ -16,7 +16,8 @@
    [service.rest-api.routing :as routing]))
 
 (defn resources [dependencies]
-  {:discovery (discovery-resource/handler dependencies)
+  {:discovery (discovery-resource/handler dependencies
+                {:defaults [:ping]})
    :ping      (ping-resource/handler dependencies)})
 
 (defn main [dependencies]
