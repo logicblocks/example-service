@@ -4,7 +4,7 @@
     [cambium.logback.json.flat-layout :as flat])
   (:import [org.slf4j.bridge SLF4JBridgeHandler]))
 
-(defn setup-logging []
+(defn initialise []
   (do
     (flat/set-decoder! codec/destringify-val)
     (SLF4JBridgeHandler/removeHandlersForRootLogger)

@@ -18,7 +18,7 @@
     (let [{:keys [bind-ip host port]} configuration
           handler (handlers/main {})
           server (server/run-server handler
-                   {:ip bind-ip
+                   {:ip   bind-ip
                     :port port})]
       (assoc component
         :server server

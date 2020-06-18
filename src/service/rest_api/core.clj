@@ -6,5 +6,5 @@
 (def configuration
   configuration/definition)
 
-(defn create []
+(defn component []
   (component/map->RestApi {}))

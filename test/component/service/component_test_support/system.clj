@@ -2,7 +2,7 @@
   (:require
     [freeport.core :refer [get-free-port!]]
 
-    [service.shared.logging :refer [setup-logging]]
+    [service.shared.logging :refer [initialise]]
     [service.system :as system]
 
     [service.component-test-support.rest-api :as rest-api]))
@@ -10,7 +10,7 @@
 (defn create [& {:as configuration}]
   (let [host "localhost"
         port (get-free-port!)]
-    (system/create
+    (system/map
       (merge
         {:rest-api (rest-api/configuration host port)}
         configuration))))
@@ -21,7 +21,7 @@
 (defn with-lifecycle [system-atom]
   (fn [f]
     (try
-      (setup-logging)
+      (initialise)
       (swap! system-atom system/start)
       (f)
       (finally

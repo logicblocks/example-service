@@ -1,4 +1,5 @@
 (ns service.system
+  (:refer-clojure :exclude [map])
   (:require
     [com.stuartsierra.component :as component]
 
@@ -6,8 +7,8 @@
 
     [service.rest-api.core :as rest-api]))
 
-(defn create
-  ([] (create {}))
+(defn map
+  ([] (map {}))
   ([configuration-overrides]
     (component/system-map
       :rest-api-configuration
@@ -16,7 +17,7 @@
 
       :rest-api
       (component/using
-        (rest-api/create)
+        (rest-api/component)
         {:configuration :rest-api-configuration}))))
 
 (defn start [service]

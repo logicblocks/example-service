@@ -26,7 +26,7 @@
 (defn dev-system
   "Constructs a system map suitable for interactive development."
   []
-  (system/create))
+  (system/map))
 
 (set-init (fn [_] (dev-system)))
 
