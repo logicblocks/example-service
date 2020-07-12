@@ -1,6 +1,7 @@
 ToDo
 ====
 
+* Add database component
 * Add top-level exception handling
 * Add health resource
 * Add metrics resource
