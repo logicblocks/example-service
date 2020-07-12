@@ -1,11 +1,11 @@
 (ns service.component-test-support.system
   (:require
-    [freeport.core :refer [get-free-port!]]
+   [freeport.core :refer [get-free-port!]]
 
-    [service.shared.logging :refer [initialise]]
-    [service.system :as system]
+   [service.shared.logging :refer [initialise]]
+   [service.system :as system]
 
-    [service.component-test-support.rest-api :as rest-api]))
+   [service.component-test-support.rest-api :as rest-api]))
 
 (defn create [& {:as configuration}]
   (let [host "localhost"

@@ -38,7 +38,7 @@
   :plugins [[lein-eftest "0.5.9"]
             [lein-ancient "0.6.15"]
             [lein-kibit "0.1.6"]
-            [lein-cljfmt "0.6.1"]
+            [lein-cljfmt "0.6.7"]
             [lein-bikeshed "0.5.1"]
             [jonase/eastwood "0.3.3"]
             [venantius/yagni "0.1.6"]]

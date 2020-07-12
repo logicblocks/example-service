@@ -1,17 +1,17 @@
 (ns service.component-test-support.rest-api
   (:require
-    [configurati.core
-     :refer [define-configuration
-             with-specification
-             with-source
-             with-key-fn
-             yaml-file-source
-             map-source
-             env-source]]
-    [configurati.key-fns
-     :refer [remove-prefix]]
+   [configurati.core
+    :refer [define-configuration
+            with-specification
+            with-source
+            with-key-fn
+            yaml-file-source
+            map-source
+            env-source]]
+   [configurati.key-fns
+    :refer [remove-prefix]]
 
-    [service.rest-api.configuration :as configuration]))
+   [service.rest-api.configuration :as configuration]))
 
 (defn address [service]
   (:address service))

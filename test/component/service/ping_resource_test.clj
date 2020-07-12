@@ -1,14 +1,14 @@
 (ns service.ping-resource-test
   (:require
-    [clojure.test :refer :all]
+   [clojure.test :refer :all]
 
-    [halboy.resource :as hal]
-    [halboy.navigator :as navigator]
+   [halboy.resource :as hal]
+   [halboy.navigator :as navigator]
 
-    [clojure.string :refer [ends-with?]]
-    [org.bovinegenius.exploding-fish :refer [absolute?]]
+   [clojure.string :refer [ends-with?]]
+   [org.bovinegenius.exploding-fish :refer [absolute?]]
 
-    [service.component-test-support.system :as system]))
+   [service.component-test-support.system :as system]))
 
 (let [test-system (atom (system/create))]
   (use-fixtures :once (system/with-lifecycle test-system))

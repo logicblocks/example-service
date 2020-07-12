@@ -1,7 +1,7 @@
 (ns service.main
   (:require
-    [service.system :as system]
-    [service.shared.logging :as logging])
+   [service.system :as system]
+   [service.shared.logging :as logging])
   (:gen-class))
 
 (defn -main [& _]
