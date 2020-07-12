@@ -19,6 +19,7 @@
 
                  [io.logicblocks/configurati "0.5.2"]
                  [io.logicblocks/liberator-hal.ping-resource "0.1.2-RC4"]
+                 [io.logicblocks/liberator-hal.health-resource "0.1.3-RC5"]
                  [io.logicblocks/liberator-hal.discovery-resource "0.1.0-RC6"]
 
                  [cambium/cambium.core "0.9.3"]

@@ -12,13 +12,16 @@
      :as discovery-resource]
     [liberator-hal.ping-resource.core
      :as ping-resource]
+    [liberator-hal.health-resource.core
+     :as health-resource]
 
     [service.rest-api.routing :as routing]))
 
 (defn resources [dependencies]
-  {:discovery (discovery-resource/handler dependencies
-                {:defaults [:ping]})
-   :ping      (ping-resource/handler dependencies)})
+  {:discovery (discovery-resource/handler dependencies)
+   :ping      (ping-resource/handler dependencies)
+   :health    (health-resource/handler dependencies
+                {:version-file-path "/VERSION"})})
 
 (defn main [dependencies]
   (let [routes (routing/routes)

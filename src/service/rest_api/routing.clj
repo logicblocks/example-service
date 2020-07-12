@@ -3,4 +3,5 @@
 (defn routes []
   [""
    [["/" :discovery]
-    ["/ping" :ping]]])
+    ["/ping" :ping]
+    ["/health" :health]]])
