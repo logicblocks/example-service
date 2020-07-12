@@ -10,8 +10,8 @@
   (format "http://%s:%s" host port))
 
 (defrecord RestApi
-           [configuration
-            server]
+  [configuration
+   server]
   component/Lifecycle
 
   (start [component]

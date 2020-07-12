@@ -78,7 +78,8 @@
                "test/integration"
                "test/component"]
 
-  :cljfmt {:indents ^:replace {#".*" [[:inner 0]]}}
+  :cljfmt {:indents {#".*"     [[:inner 0]]
+                     defrecord [[:block 1] [:inner 1]]}}
 
   :aliases {"test" ["do"
                     ["with-profile" "unit" "eftest" ":all"]
