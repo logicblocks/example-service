@@ -11,12 +11,6 @@ slack_context: &slack_context
   context:
     - slack
 
-only_main: &only_main
-  filters:
-    branches:
-      only:
-        - main
-
 only_dependabot: &only_dependabot
   filters:
     branches:
@@ -69,10 +63,6 @@ commands:
       - run: ./scripts/ci/common/upgrade-gpg.sh
       - run: ./scripts/ci/common/install-git-crypt.sh
       - run: ./scripts/ci/common/install-gpg-key.sh
-  configure_release_tools:
-    steps:
-      - run: ./scripts/ci/common/configure-git.sh
-      - run: ./scripts/ci/common/configure-clojars.sh
 
 jobs:
   build:
@@ -90,26 +80,6 @@ jobs:
       - checkout
       - configure_build_tools
       - run: ./scripts/ci/steps/test.sh
-      - notify
-
-  prerelease:
-    <<: *ruby_container
-    steps:
-      - checkout
-      - configure_build_tools
-      - configure_secrets_tools
-      - configure_release_tools
-      - run: ./scripts/ci/steps/prerelease.sh
-      - notify
-
-  release:
-    <<: *ruby_container
-    steps:
-      - checkout
-      - configure_build_tools
-      - configure_secrets_tools
-      - configure_release_tools
-      - run: ./scripts/ci/steps/release.sh
       - notify
 
   merge_pull_request:
@@ -138,26 +108,3 @@ workflows:
           <<: *slack_context
           requires:
             - test
-      - prerelease:
-          <<: *only_main
-          <<: *slack_context
-          requires:
-            - test
-      - slack/on-hold:
-          <<: *only_main
-          <<: *slack_context
-          requires:
-            - prerelease
-          channel: release
-          template: SLACK_ON_HOLD_NOTIFICATION
-      - hold:
-          <<: *only_main
-          type: approval
-          requires:
-            - prerelease
-            - slack/on-hold
-      - release:
-          <<: *only_main
-          <<: *slack_context
-          requires:
-            - hold
