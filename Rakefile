@@ -4,7 +4,6 @@ require 'confidante'
 require 'rake_circle_ci'
 require 'rake_git'
 require 'rake_git_crypt'
-require 'rake_github'
 require 'rake_gpg'
 require 'rake_leiningen'
 require 'rake_ssh'
@@ -119,29 +118,12 @@ RakeCircleCI.define_project_tasks(
   }
 end
 
-RakeGithub.define_repository_tasks(
-  namespace: :github,
-  repository: 'logicblocks/example-service'
-) do |t|
-  github_config =
-    YAML.load_file('config/secrets/github/config.yaml')
-
-  t.access_token = github_config['github_personal_access_token']
-  t.deploy_keys = [
-    {
-      title: 'CircleCI',
-      public_key: File.read('config/secrets/ci/ssh.public')
-    }
-  ]
-end
-
 namespace :pipeline do
   desc 'Prepare CircleCI Pipeline'
   task prepare: %i[
     circle_ci:env_vars:ensure
     circle_ci:checkout_keys:ensure
     circle_ci:ssh_keys:ensure
-    github:deploy_keys:ensure
   ]
 end
 
